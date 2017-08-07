@@ -14,6 +14,9 @@ class Libtomcrypt < Formula
 
   def install
     ENV["DESTDIR"] = prefix
+    ENV["LIBPATH"] = "#{prefix}/lib"
+    ENV["INCPATH"] = "#{prefix}/include/tomcrypt"
+    ENV["DATAPATH"] = "#{prefix}/share/tomcrypt"
     ENV["EXTRALIBS"] = "-ltommath"
     ENV["NODOCS"] = "1"
     ENV["INSTALL_USER"] = `id -un`.chomp
